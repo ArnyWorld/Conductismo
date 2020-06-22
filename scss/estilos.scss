@@ -1,0 +1,214 @@
+@import 'variables';
+@import 'mixins';
+//Generales
+.texto {
+    font-size: 18px;
+    text-align: justify;
+    &::first-letter {
+        @include texto($primeraLetra, 1.8rem);
+        font-weight: Bold;
+    }
+    @include tablet() {
+        font-size: 20px;
+    }
+}
+
+h1,
+h2 {
+    color: $primeraLetra;
+    text-shadow: 1px 1px 3px $fondoBarra;
+    font-weight: bold;
+}
+
+h3 {
+    color: $textoSubtitulo;
+}
+
+.grande {
+    width: 400px;
+}
+
+.header {
+    position: relative;
+    height: 80vh;
+    .barra {
+        background-color: $fondoBarra;
+        .logo {
+            width: 30%;
+            img {
+                width: 180px;
+            }
+        }
+        .navegacion {
+            width: 70%;
+            .menu {
+                width: 100%;
+                .active {
+                    @include texto($textoBlanco, 1.2rem);
+                    font-weight: bold;
+                }
+                .nav-link {
+                    @include texto($textoBlanco, 1.2rem);
+                    &:hover {
+                        font-weight: 600;
+                        transition: all .5s ease-in;
+                    }
+                }
+            }
+        }
+    }
+    .banner {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 80vh;
+        background-image: url(../img/banner2.jpg);
+        background-size: cover;
+        background-position: center center;
+        z-index: -1;
+    }
+}
+
+.container {
+    .principal {
+        position: relative;
+        .conductismo {
+            img {
+                width: 350px;
+                @include tablet() {
+                    width: 100%;
+                }
+            }
+        }
+        .precursores {
+            .mediano {
+                width: 350px;
+                height: 435px;
+                @include tablet() {
+                    width: 100%;
+                }
+            }
+        }
+        .docente {
+            .contenido {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                iframe {
+                    width: 560px;
+                    height: 315px;
+                    @include tablet() {
+                        width: 100%;
+                    }
+                }
+                @include tablet() {
+                    flex-direction: column;
+                }
+            }
+        }
+        .aportes {
+            .ventajas {
+                li {
+                    list-style: none;
+                    &:before {
+                        content: '';
+                        background-image: url(../img/check.png);
+                        background-size: contain;
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+            .desventajas {
+                li {
+                    list-style: none;
+                    &:before {
+                        content: '';
+                        background-image: url(../img/error.png);
+                        background-size: contain;
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+            .caracteristicas {
+                li {
+                    list-style: circle;
+                }
+            }
+            .ideas {
+                li {
+                    list-style: square;
+                }
+            }
+        }
+    }
+    .integrantes {
+        display: flex;
+        justify-content: space-between;
+        .alexandra,
+        .arnaldo,
+        .cristhian {
+            width: 33.3%;
+            padding: 10px;
+            text-align: center;
+        }
+        img {
+            width: 80px;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        h4 {
+            font-size: 1rem;
+            color: #e90041;
+        }
+        p {
+            font-size: .9rem;
+            color: #2c2c2c;
+            font-weight: bold;
+        }
+    }
+}
+
+.scroll {
+    display: flex;
+    justify-content: space-between;
+    .btn-examen {
+        background-color: #e90041;
+        width: 300px;
+        padding: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        img {
+            width: 50px;
+        }
+        .test {
+            color: white;
+            font-weight: bold;
+            ;
+        }
+    }
+    a {
+        img {
+            width: 50px;
+        }
+    }
+}
+
+footer {
+    padding: 15px 0;
+    background-color: rgb(40, 167, 69);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+        color: $textoBlanco;
+        margin-bottom: 0;
+    }
+}

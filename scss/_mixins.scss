@@ -1,0 +1,16 @@
+@mixin texto($color, $size) {
+    color: $color;
+    font-size: $size;
+}
+
+@mixin telefono() {
+    @media (max-width: #{$telefono}) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
